@@ -1,0 +1,202 @@
+<odoo>
+  <data>
+        <record id="view_task_project_user_search_custom_inherited" model="ir.ui.view">
+            <field name="name">report.project.task.user.search.inherited</field>
+            <field name="model">report.project.task.user</field>
+            <field name="inherit_id" ref="project.view_task_project_user_search" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='my_tasks']" position="attributes">
+                    <attribute name="string">My Milestones</attribute>
+                </xpath>
+                 <xpath expr="//filter[@name='own_projects']" position="attributes">
+                    <attribute name="string">My Sites</attribute>
+                </xpath>
+                 <xpath expr="//filter[@name='unassigned']" position="attributes">
+                    <attribute name="string">Unassigned Milestones</attribute>
+                </xpath>
+                 <xpath expr="//filter[@name='open_tasks']" position="attributes">
+                    <attribute name="string">Open Milestones</attribute>
+                </xpath>
+                 <xpath expr="//filter[@name='project']" position="attributes">
+                    <attribute name="string">Sites</attribute>
+                </xpath>
+                <xpath expr="//filter[@name='late']" position="attributes">
+                    <attribute name="string">Milestones Late</attribute>
+                </xpath>
+             </field>
+        </record>
+
+         <record id="view_task_search_form_extended_inherited" model="ir.ui.view">
+            <field name="name">project.task.search.inherited</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_search_form_extended" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='my_projects']" position="attributes">
+                    <attribute name="string">My Sites</attribute>
+                </xpath>
+                <xpath expr="//filter[@name='my_favorite_projects']" position="attributes">
+                    <attribute name="string">My Favorite Sites</attribute>
+                </xpath>
+                 <xpath expr="//filter[@name='my_followed_projects']" position="attributes">
+                    <attribute name="string">Followed Sites</attribute>
+                </xpath>
+             </field>
+        </record>
+
+        <record id="view_task_search_form_inherited" model="ir.ui.view">
+            <field name="name">project.task.search.inherited</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_search_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="string">Milestone</attribute>
+                </xpath>
+                <xpath expr="//field[@name='display_project_id']" position="attributes">
+                    <attribute name="string">Sites</attribute>
+                </xpath>
+                 <xpath expr="//filter[@name='my_tasks']" position="attributes">
+                    <attribute name="string">My Milestones</attribute>
+                </xpath>
+                <xpath expr="//filter[@name='late']" position="attributes">
+                    <attribute name="string">Late Milestones</attribute>
+                </xpath>
+                <xpath expr="//filter[@name='rating_task']" position="attributes">
+                    <attribute name="string">Rated Milestones</attribute>
+                </xpath>
+                <xpath expr="//filter[@name='project']" position="attributes">
+                    <attribute name="string">Site</attribute>
+                </xpath>
+             </field>
+        </record>
+
+        <record id="view_task_search_form_inherited" model="ir.ui.view">
+            <field name="name">project.task.search.inherited</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_search_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="string">Milestone</attribute>
+                </xpath>
+                <xpath expr="//field[@name='display_project_id']" position="attributes">
+                    <attribute name="string">Sites</attribute>
+                </xpath>
+                 <xpath expr="//filter[@name='my_tasks']" position="attributes">
+                    <attribute name="string">My Milestones</attribute>
+                </xpath>
+                <xpath expr="//filter[@name='late']" position="attributes">
+                    <attribute name="string">Late Milestones</attribute>
+                </xpath>
+                <xpath expr="//filter[@name='rating_task']" position="attributes">
+                    <attribute name="string">Rated Milestones</attribute>
+                </xpath>
+                <xpath expr="//filter[@name='project']" position="attributes">
+                    <attribute name="string">Site</attribute>
+                </xpath>
+             </field>
+        </record>
+       <record id="view_task_form2_extension_inherit" model="ir.ui.view">
+            <field name="name">project.extension.form.view.inherit</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='sub_tasks_page']" position='attributes'>
+                   <attribute name="string">Sub-milestones</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_task_partner_info_form_extension_inherit" model="ir.ui.view">
+            <field name="name">project.extension.form.view.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="project.view_task_partner_info_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='task_count']" position='attributes'>
+                   <attribute name="string">Milestones</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="edit_project_inherit" model="ir.ui.view">
+            <field name="name">edit.project.inherit</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='task_count']" position='replace'>
+                   <field string="Milestones In Progress" name="task_count" widget="statinfo"/>
+                </xpath>
+<!--                <xpath expr="//field[@name='task_count_with_subtasks']" position='attributes'>-->
+<!--                   <attribute name="string">Milestones Count With Submilestones</attribute>-->
+<!--                </xpath>-->
+                <xpath expr="//field[@name='user_id']" position='attributes'>
+                   <attribute name="string">Site Manager</attribute>
+                </xpath>
+                 <xpath expr="//field[@name='label_tasks']" position='attributes'>
+                   <attribute name="string">Name of the milestones </attribute>
+                </xpath>
+                <xpath expr="//label[@for='allow_recurring_tasks']" position='attributes'>
+                   <attribute name="string">Recurring Milestones </attribute>
+                </xpath>
+                 <xpath expr="//label[@for='allow_task_dependencies']" position='attributes'>
+                   <attribute name="string">Milestones Dependencies</attribute>
+                </xpath>
+                <xpath expr="//label[@for='allow_subtasks']" position='attributes'>
+                   <attribute name="string">Sub-milestones</attribute>
+                </xpath>
+                 <xpath expr="//field[@name='company_id']" position='before'>
+                     <field name="budget"/>
+                     <field name="project_size"/>
+                     <field name="deadline_date"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_project_kanban_inherit" model="ir.ui.view">
+            <field name="name">view.project.kanban.inherit</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_kanban"/>
+<!--            <field name="context">{'search_stage_id': 1}</field>-->
+            <field name="arch" type="xml">
+                <xpath expr="//kanban" position="attributes">
+                    <attribute name="default_group_by">stage_id</attribute>
+                </xpath>
+                <xpath expr="//field[@name='label_tasks']" position='attributes'>
+                   <attribute name="string">Use Milestones as </attribute>
+                </xpath>
+                <xpath expr="//span[hasclass('o_label')]" position="replace">
+                     <span class="o_label">Milestones</span>
+                </xpath>
+            </field>
+        </record>
+
+       <record id="view_project_project_filter_inherit" model="ir.ui.view">
+            <field name="name">filter.project.inherit</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_project_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='own_projects']" position='attributes'>
+                   <attribute name="string">My Sites</attribute>
+                </xpath>
+                 <xpath expr="//filter[@name='Manager']" position='attributes'>
+                   <attribute name="string">Sites Manager</attribute>
+                </xpath>
+            </field>
+        </record>
+
+      <record id="project.menu_projects" model="ir.ui.menu">
+          <field name="action" ref="project.open_view_project_all_config"/>
+      </record>
+      <record id="project.menu_projects_group_stage" model="ir.ui.menu">
+          <field name="action" ref="project.open_view_project_all_config"/>
+      </record>
+      <record id="view_project_tree_inherit" model="ir.ui.view">
+            <field name="name">project.tree.view.inherit</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position='attributes'>
+                   <attribute name="string">Sites Manager</attribute>
+                </xpath>
+
+            </field>
+        </record>
+<!--      <function model="project.project" name="action_custom_method"/>-->
+   </data>
+</odoo>

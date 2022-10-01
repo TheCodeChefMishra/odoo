@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+      <record id="edit_project_extension_inherit" model="ir.ui.view">
+            <field name="name">edit.project.inherit</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='company_id']" position='before'>
+                     <field name="dynamic_required_field" options="{'no_create': True,'no_open':True}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
